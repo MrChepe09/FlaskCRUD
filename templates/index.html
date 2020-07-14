@@ -1,0 +1,20 @@
+{% extends 'nav.html' %}
+
+{% block title %}Home{% endblock %}
+
+    {% block content %}
+      <div class="container">
+          <h1 class="text-center mt-5 text-primary"><b>Microsoft Student Partners</b></h1>
+          <div class="card bg-dark mt-3 align-center mb-5">
+            <h2 class="card-title text-light text-center mt-3 mb-3">Partners Data</h2>
+            <div class="ml-3 card-body col">
+                <p class="card-text text-white"><b>Users Count:-</b> <span class='text-primary'>{{ data['user'] }} Users</span></p>
+                <p class="card-text text-white"><b>Countries Count:-</b> <span class='text-primary'>{{ data['countries'] }} Countries</span></p>
+                <p class="card-text text-white"><b>Alpha Level Users:-</b> <span class='text-primary'>{{ data['alpha'] }} Users</span></p>
+                <p class="card-text text-white"><b>Beta Level Users:-</b> <span class='text-primary'>{{ data['beta'] }} Users</span></p>
+                <p class="card-text text-white mb-3"><b>Gold Level Users:-</b> <span class='text-primary'>{{ data['gold'] }} Users</span></p>
+            </div>
+          </div>
+      </div>
+    {% endblock %}
+    

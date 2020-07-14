@@ -1,0 +1,53 @@
+{% extends 'nav.html' %}
+
+{% block title %}Update User{% endblock %}
+
+    {% block content %}
+      <div class="container">
+        {% if error == 'success' %}
+        <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">
+            <strong>Success</strong> The user's level has been updated successfully.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {% endif %}
+        {% if error=='fail' %}
+        <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+            <strong>Failed</strong> No user found.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {% endif %}  
+          <h1 class="text-center mt-5 text-primary"><b>Microsoft Student Partners</b></h1>
+          <div class="card bg-dark mt-3 align-center mb-5">
+            <h2 class="card-title text-light text-center mt-3 mb-3">Update Level</h2>
+            <form class="ml-3 card-body col" method="post" action="/update">
+                <div class="form-col text-white mr-5">
+                    <div class="form-group mb-7">
+                        <label>Name: </label>
+                        <input class="form-control" type="text" name="name" placeholder="Enter User name">
+                    </div>
+                    
+                    <div class="form-group mb-7">
+                        <label>Country: </label>
+                        <input class="form-control" type="text" name="country" placeholder="Enter Country name">
+                    </div>
+
+                    <div class="form-group mb-7">
+                        <label>Level: </label>
+                        <select class="form-control" name='level'>
+                            <option>Alpha</option>
+                            <option>Beta</option>
+                            <option>Gold</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mt-4 mb-3">
+                        <button class="form-control btn btn-submit btn-primary" type="submit">Submit</button>
+                    </div>
+            </form>
+          </div>
+      </div>
+    {% endblock %}
